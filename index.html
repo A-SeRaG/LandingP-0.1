@@ -24,54 +24,352 @@
     --input-bg:   rgba(0,245,255,0.03);
   }
 
-  /* ── LIGHT MODE TOKENS ── */
-  body.light {
-    --cyan:      #0099aa;
-    --cyan-dim:  #007888;
-    --cyan-glow: rgba(0,153,170,0.25);
-    --dark:      #f0f7fa;
-    --dark2:     #ffffff;
-    --dark3:     #e2eef3;
-    --teal:      #b2dce6;
-    --white:     #0d1f2d;
-    --muted:     #5a8090;
-    --bg:        #f0f7fa;
-    --bg2:       #ffffff;
-    --bg3:       #e2eef3;
-    --nav-bg:    rgba(240,247,250,0.96);
-    --input-bg:  rgba(0,153,170,0.04);
+  
+  /* ── INLINE STYLE FIXES ── */
+  .hero-title-accent {
+    background: linear-gradient(135deg, #fff 30%, rgba(232,244,248,0.4) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-  body.light { background: var(--bg); color: var(--white); }
-  body.light #neural-canvas { opacity: 0.2; }
-  body.light .scanline { opacity: 0.1; }
-  body.light .glitch::before { color: #cc00aa; }
-  body.light .glitch::after  { color: #0099aa; }
-  body.light .hero-title span {
-    background: linear-gradient(135deg, #0d1f2d 0%, var(--cyan) 60%, #007888 100%);
-    -webkit-background-clip: text; background-clip: text;
+  .hero-trust-text {
+    color: rgba(232,244,248,0.5);
   }
-  body.light .hero-sub, body.light .cta-sub { color: rgba(13,31,45,0.65); }
-  body.light .feature-desc, body.light .back-bio { color: rgba(13,31,45,0.6); }
-  body.light .track-courses li { color: rgba(13,31,45,0.6); }
-  body.light .track-card:hover .track-courses li { color: rgba(13,31,45,0.88); }
-  body.light .track-card, body.light .feature-card { background: var(--dark2); }
-  body.light .path-node, body.light .founder-front, body.light .founder-back { background: var(--dark2); }
-  body.light .milestone { background: rgba(0,153,170,0.04); }
-  body.light .avatar-placeholder, body.light .avatar-placeholder-sm { background: linear-gradient(135deg, #e2eef3, #b2dce6); }
-  body.light .modal-backdrop { background: rgba(13,31,45,0.5); }
-  body.light .modal { background: var(--dark2); }
-  body.light .form-input, body.light .form-textarea, body.light .form-select { color: var(--white); background: var(--input-bg); }
-  body.light .form-input::placeholder, body.light .form-textarea::placeholder { color: var(--muted); opacity: 0.7; }
-  body.light nav { background: linear-gradient(180deg, var(--nav-bg) 0%, transparent 100%); }
-  body.light footer { border-color: rgba(0,153,170,0.12); }
-  body.light #stats { background: rgba(0,153,170,0.04); border-color: rgba(0,153,170,0.12); }
-  body.light .stat-card { border-color: rgba(0,153,170,0.1); }
-  body.light .marquee-wrap { background: rgba(0,153,170,0.03); border-color: rgba(0,153,170,0.1); }
-  body.light #cta::before { background: radial-gradient(circle, rgba(0,153,170,0.1) 0%, transparent 70%); }
-  body.light .tracks-grid { background: rgba(0,153,170,0.06); border-color: rgba(0,153,170,0.12); }
-  body.light .feature-card { border-color: rgba(0,153,170,0.12); background: rgba(255,255,255,0.8); }
+  .cta-note {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: rgba(232,244,248,0.3);
+    margin-top: 1.5rem;
+    letter-spacing: 0.05em;
+  }
 
-  /* ── THEME TOGGLE ── */
+  .hero-trust-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(0,245,255,0.15);
+  }
+
+/* ── LIGHT MODE TOKENS ── */
+body.light {
+  --cyan:      #0d8fa0;
+  --cyan-dim:  #007a8a;
+  --cyan-glow: rgba(13,143,160,0.35);
+  --dark:      #f5f9fb;
+  --dark2:     #ffffff;
+  --dark3:     #e8f1f5;
+  --teal:      #7dd3e0;
+  --white:     #0a1929;
+  --muted:     #5e7a8a;
+  --bg:        #f5f9fb;
+  --bg2:       #ffffff;
+  --bg3:       #e8f1f5;
+  --nav-bg:    rgba(245,249,251,0.96);
+  --input-bg:  rgba(13,143,160,0.05);
+}
+body.light { background: var(--bg); color: var(--white); }
+body.light #neural-canvas { opacity: 0.22; }
+body.light .scanline { opacity: 0.06; }
+body.light .glitch::before { color: #c41e8c; }
+body.light .glitch::after  { color: #0d8fa0; }
+body.light .hero-title span {
+  background: linear-gradient(135deg, #0a1929 0%, var(--cyan) 55%, var(--cyan-dim) 100%);
+  -webkit-background-clip: text; background-clip: text;
+}
+body.light .hero-sub, body.light .cta-sub { color: rgba(10,25,41,0.58); }
+body.light .feature-desc, body.light .back-bio { color: rgba(10,25,41,0.58); }
+body.light .track-courses li { color: rgba(10,25,41,0.55); }
+body.light .track-card:hover .track-courses li { color: rgba(10,25,41,0.88); }
+body.light .track-card, body.light .feature-card { background: var(--dark2); }
+body.light .path-node, body.light .founder-front, body.light .founder-back { background: var(--dark2); }
+body.light .milestone { background: rgba(13,143,160,0.04); }
+body.light .avatar-placeholder, body.light .avatar-placeholder-sm { background: linear-gradient(135deg, #e8f1f5, #7dd3e0); }
+body.light .modal-backdrop { background: rgba(10,25,41,0.45); }
+body.light .modal { background: var(--dark2); }
+body.light .form-input, body.light .form-textarea, body.light .form-select { color: var(--white); background: var(--input-bg); }
+body.light .form-input::placeholder, body.light .form-textarea::placeholder { color: var(--muted); opacity: 0.65; }
+body.light nav { background: linear-gradient(180deg, var(--nav-bg) 0%, transparent 100%); }
+body.light footer { border-color: rgba(13,143,160,0.10); }
+body.light #stats { background: rgba(13,143,160,0.04); border-color: rgba(13,143,160,0.10); }
+body.light .stat-card { border-color: rgba(13,143,160,0.08); }
+body.light .marquee-wrap { background: rgba(13,143,160,0.03); border-color: rgba(13,143,160,0.08); }
+body.light #cta::before { background: radial-gradient(circle, rgba(13,143,160,0.10) 0%, transparent 70%); }
+body.light .tracks-grid { background: rgba(13,143,160,0.05); border-color: rgba(13,143,160,0.10); }
+body.light .feature-card { border-color: rgba(13,143,160,0.10); background: rgba(255,255,255,0.85); }
+body.light .feature-card:hover { border-color: rgba(13,143,160,0.35); }
+body.light .track-card::before { background: linear-gradient(135deg, rgba(13,143,160,0.06), transparent); }
+body.light .track-card::after { background: var(--cyan); box-shadow: 0 0 10px var(--cyan-glow); }
+body.light .milestone { border-color: rgba(13,143,160,0.08); }
+body.light .milestone:hover { border-color: rgba(13,143,160,0.22); background: rgba(13,143,160,0.03); }
+body.light .founder-front { border-color: rgba(13,143,160,0.10); }
+body.light .founder-back { border-color: rgba(13,143,160,0.10); }
+body.light .founder-back::before { border-color: var(--cyan); }
+body.light .founder-back::after { border-color: var(--cyan); }
+body.light .founder-li { background: rgba(13,143,160,0.10); border-color: rgba(13,143,160,0.25); }
+body.light .founder-li:hover { background: rgba(13,143,160,0.20); }
+body.light .role-chip { color: var(--cyan); background: rgba(13,143,160,0.08); border-color: rgba(13,143,160,0.18); }
+body.light .flip-hint { color: rgba(13,143,160,0.40); }
+body.light .flip-hint::before { color: var(--cyan); }
+body.light .back-close { color: rgba(13,143,160,0.35); border-color: rgba(13,143,160,0.06); }
+body.light .back-close::before { color: var(--cyan); }
+body.light .modal { border-color: rgba(13,143,160,0.15); }
+body.light .modal::before { border-color: var(--cyan); }
+body.light .modal::after { border-color: var(--cyan); }
+body.light .modal-glow-line { background: linear-gradient(90deg, transparent, var(--cyan), transparent); box-shadow: 0 0 20px var(--cyan-glow); }
+body.light .modal-header { border-color: rgba(13,143,160,0.06); }
+body.light .modal-close { background: rgba(13,143,160,0.06); border-color: rgba(13,143,160,0.18); color: var(--cyan); }
+body.light .modal-close:hover { background: rgba(13,143,160,0.12); }
+body.light .form-input, body.light .form-textarea, body.light .form-select { border-color: rgba(13,143,160,0.12); }
+body.light .form-input:focus, body.light .form-textarea:focus, body.light .form-select:focus { border-color: rgba(13,143,160,0.45); background: rgba(13,143,160,0.06); box-shadow: 0 0 16px rgba(13,143,160,0.06), inset 0 0 8px rgba(13,143,160,0.02); }
+body.light .form-select option { background: var(--dark2); color: var(--white); }
+body.light .form-submit { background: var(--cyan); color: #ffffff; }
+body.light .form-submit:hover { box-shadow: 0 0 30px var(--cyan-glow), 0 0 60px rgba(13,143,160,0.15); }
+body.light .form-note { color: var(--muted); }
+body.light .form-note a { color: var(--cyan); }
+body.light .success-title { color: var(--cyan); }
+body.light .success-msg { color: rgba(10,25,41,0.50); }
+body.light .hero-trust span { color: rgba(10,25,41,0.45); }
+body.light .scroll-text { color: var(--muted); }
+body.light .scroll-line { background: linear-gradient(180deg, var(--cyan), transparent); }
+body.light .section-tag { color: var(--cyan); border-color: rgba(13,143,160,0.20); }
+body.light .nav-links a { color: var(--muted); }
+body.light .nav-links a:hover { color: var(--cyan); }
+body.light .nav-links a::after { background: var(--cyan); }
+body.light .nav-cta { border-color: var(--cyan); color: var(--cyan); }
+body.light .nav-cta:hover { background: var(--cyan); color: #ffffff; }
+body.light .btn-primary { background: var(--cyan); color: #ffffff; }
+body.light .btn-primary:hover { box-shadow: 0 0 40px var(--cyan-glow), 0 0 80px rgba(13,143,160,0.15); }
+body.light .btn-secondary { color: var(--cyan); border-color: rgba(13,143,160,0.35); }
+body.light .btn-secondary:hover { border-color: var(--cyan); background: rgba(13,143,160,0.04); }
+body.light .stat-num { color: var(--cyan); text-shadow: 0 0 30px var(--cyan-glow); }
+body.light .stat-label { color: var(--muted); }
+body.light .stat-card:hover { background: rgba(13,143,160,0.04); }
+body.light .track-level { color: var(--cyan); opacity: 0.65; }
+body.light .track-name { color: var(--white); }
+body.light .course-badge { color: var(--cyan); background: rgba(13,143,160,0.08); border-color: rgba(13,143,160,0.15); }
+body.light .feature-glyph { border-color: rgba(13,143,160,0.25); background: rgba(13,143,160,0.04); }
+body.light .feature-card:hover .feature-glyph { background: rgba(13,143,160,0.08); box-shadow: 0 0 20px rgba(13,143,160,0.12); }
+body.light .feature-title { color: var(--white); }
+body.light .path-text h3 { color: var(--white); }
+body.light .path-text p { color: rgba(10,25,41,0.55); }
+body.light .milestone-num { color: var(--cyan); opacity: 0.25; }
+body.light .milestone-content h4 { color: var(--white); }
+body.light .milestone-content p { color: rgba(10,25,41,0.45); }
+body.light .path-node { border-color: rgba(13,143,160,0.18); }
+body.light .path-node:hover { border-color: var(--cyan); box-shadow: 0 0 25px var(--cyan-glow); }
+body.light .path-node-label { color: var(--cyan); }
+body.light .cta-title { color: var(--white); }
+body.light .cta-title span { color: var(--cyan); text-shadow: 0 0 40px var(--cyan-glow); }
+body.light .footer-brand { color: var(--cyan); opacity: 0.45; }
+body.light .footer-copy { color: var(--muted); }
+body.light .marquee-item { color: var(--muted); }
+body.light .marquee-item::after { color: var(--cyan); text-shadow: 0 0 10px var(--cyan-glow); }
+body.light #theme-toggle { background: rgba(13,143,160,0.07); border-color: rgba(13,143,160,0.20); color: var(--cyan); }
+body.light #theme-toggle:hover { background: rgba(13,143,160,0.12); box-shadow: 0 0 16px var(--cyan-glow); }
+body.light .founder-role-badge { background: linear-gradient(0deg, rgba(245,249,251,0.95) 0%, transparent 100%); }
+body.light .founder-role-name { color: var(--white); }
+body.light .back-name { color: var(--white); }
+body.light .back-bio { color: rgba(10,25,41,0.58); }
+body.light .avatar-placeholder { color: rgba(13,143,160,0.30); }
+body.light .avatar-placeholder-sm { color: rgba(13,143,160,0.45); }
+body.light .mobile-nav { background: rgba(245,249,251,0.97); }
+body.light .mobile-nav-link { color: rgba(10,25,41,0.30); }
+body.light .mobile-nav-link:hover { color: var(--cyan); }
+body.light .mobile-nav-divider { background: rgba(13,143,160,0.12); }
+body.light .mobile-nav-cta { background: var(--cyan); color: #ffffff; }
+
+  body.light .hero-title-accent {
+  background: linear-gradient(135deg, #0a1929 0%, rgba(10,25,41,0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body.light .hero-trust-text {
+  color: rgba(10,25,41,0.45);
+}
+body.light .cta-note {
+  color: rgba(10,25,41,0.35);
+}
+
+body.light .hero-trust-divider {
+  background: rgba(13,143,160,0.15);
+}
+
+
+/* ── COMPREHENSIVE LIGHT MODE TEXT FIXES ── */
+body.light .hero-title .accent {
+  background: linear-gradient(90deg, var(--cyan), #00c896);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body.light .hero-title-accent {
+  background: linear-gradient(135deg, #0a1929 0%, rgba(10,25,41,0.6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body.light .hero-sub {
+  color: rgba(10,25,41,0.65);
+}
+body.light .hero-trust-text {
+  color: rgba(10,25,41,0.60);
+}
+body.light .cta-sub {
+  color: rgba(10,25,41,0.65);
+}
+body.light .cta-note {
+  color: rgba(10,25,41,0.55);
+}
+body.light .section-title {
+  color: var(--white);
+}
+body.light .section-tag {
+  color: var(--cyan);
+  border-color: rgba(13,143,160,0.2);
+}
+body.light .track-name {
+  color: var(--white);
+}
+body.light .track-level {
+  color: var(--cyan);
+  opacity: 0.65;
+}
+body.light .track-courses li {
+  color: rgba(10,25,41,0.60);
+}
+body.light .track-card:hover .track-courses li {
+  color: rgba(10,25,41,0.88);
+}
+body.light .course-badge {
+  color: var(--cyan);
+  background: rgba(13,143,160,0.08);
+  border-color: rgba(13,143,160,0.15);
+}
+body.light .feature-title {
+  color: var(--white);
+}
+body.light .feature-desc {
+  color: rgba(10,25,41,0.62);
+}
+body.light .path-text h3 {
+  color: var(--white);
+}
+body.light .path-text h3 em {
+  color: var(--cyan);
+}
+body.light .path-text p {
+  color: rgba(10,25,41,0.60);
+}
+body.light .milestone-content h4 {
+  color: var(--white);
+}
+body.light .milestone-content p {
+  color: rgba(10,25,41,0.60);
+}
+body.light .milestone-num {
+  color: var(--cyan);
+  opacity: 0.25;
+}
+body.light .path-node-label {
+  color: var(--cyan);
+}
+body.light .cta-title {
+  color: var(--white);
+}
+body.light .cta-title span {
+  color: var(--cyan);
+}
+body.light .founder-role-name {
+  color: var(--white);
+}
+body.light .back-name {
+  color: var(--white);
+}
+body.light .back-bio {
+  color: rgba(10,25,41,0.62);
+}
+body.light .back-roles .role-chip {
+  color: var(--cyan);
+  background: rgba(13,143,160,0.08);
+  border-color: rgba(13,143,160,0.18);
+}
+body.light .modal-title {
+  color: var(--white);
+}
+body.light .modal-title span {
+  color: var(--cyan);
+}
+body.light .modal-eyebrow {
+  color: var(--cyan);
+  opacity: 0.7;
+}
+body.light .form-label {
+  color: var(--muted);
+}
+body.light .form-note {
+  color: var(--muted);
+}
+body.light .form-note a {
+  color: var(--cyan);
+}
+body.light .success-title {
+  color: var(--cyan);
+}
+body.light .success-msg {
+  color: rgba(10,25,41,0.60);
+}
+body.light .stat-label {
+  color: var(--muted);
+}
+body.light .stat-num {
+  color: var(--cyan);
+}
+body.light .nav-links a {
+  color: var(--muted);
+}
+body.light .nav-links a:hover {
+  color: var(--cyan);
+}
+body.light .nav-brand {
+  color: var(--cyan);
+}
+body.light .footer-brand {
+  color: var(--cyan);
+  opacity: 0.45;
+}
+body.light .footer-copy {
+  color: var(--muted);
+}
+body.light .marquee-item {
+  color: var(--muted);
+}
+body.light .scroll-text {
+  color: var(--muted);
+}
+body.light .flip-hint {
+  color: rgba(13,143,160,0.40);
+}
+body.light .back-close {
+  color: rgba(13,143,160,0.35);
+}
+body.light .mobile-nav-link {
+  color: rgba(10,25,41,0.30);
+}
+body.light .mobile-nav-link:hover {
+  color: var(--cyan);
+}
+body.light .hero-eyebrow {
+  color: var(--cyan);
+  opacity: 0.7;
+}
+body.light .section-header .section-tag {
+  color: var(--cyan);
+}
+body.light .section-header .section-title {
+  color: var(--white);
+}
+/* ── THEME TOGGLE ── */
   #theme-toggle {
     width: 40px; height: 40px;
     background: rgba(0,245,255,0.07);
@@ -1346,7 +1644,7 @@
   <h1 class="hero-title">
     <span class="glitch" data-text="YOUR SCHOOL.">YOUR SCHOOL.</span>
     <span class="accent">FUTURE-READY</span>
-    <span style="background:linear-gradient(135deg,#fff 30%,rgba(232,244,248,0.4) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">STUDENTS.</span>
+    <span class="hero-title-accent">STUDENTS.</span>
   </h1>
   <p class="hero-sub">CMind gives schools a complete, managed STEM curriculum — 10 tracks, 30+ courses, ages 9–18. From Scratch to Python. From Arduino to AI. Everything your students need, in one platform.</p>
   <div class="hero-actions">
@@ -1361,17 +1659,17 @@
   <div class="hero-trust" style="display:flex;align-items:center;justify-content:center;gap:2rem;margin-top:2.5rem;animation:fadeUp 1s ease both 1.3s;flex-wrap:wrap;">
     <div style="display:flex;align-items:center;gap:0.6rem;">
       <span style="font-size:1.1rem;">🏫</span>
-      <span style="font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:600;color:rgba(232,244,248,0.5);letter-spacing:0.08em;">Partner Schools Across Egypt</span>
+      <span style="font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;">Partner Schools Across Egypt</span>
     </div>
-    <span style="width:1px;height:20px;background:rgba(0,245,255,0.15);"></span>
+    <span class="hero-trust-divider"></span>
     <div style="display:flex;align-items:center;gap:0.6rem;">
       <span style="font-size:1.1rem;">👩‍💻</span>
-      <span style="font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:600;color:rgba(232,244,248,0.5);letter-spacing:0.08em;">Ages 9–18 · All Skill Levels</span>
+      <span style="font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;">Ages 9–18 · All Skill Levels</span>
     </div>
-    <span style="width:1px;height:20px;background:rgba(0,245,255,0.15);"></span>
+    <span class="hero-trust-divider"></span>
     <div style="display:flex;align-items:center;gap:0.6rem;">
       <span style="font-size:1.1rem;">🌍</span>
-      <span style="font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:600;color:rgba(232,244,248,0.5);letter-spacing:0.08em;">Arabic & English · RTL Supported</span>
+      <span style="font-family:'Rajdhani',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;">Arabic & English · RTL Supported</span>
     </div>
   </div>
   <div class="hero-scroll-hint">
@@ -1788,7 +2086,7 @@
       <a href="#" class="btn-primary" data-enroll>Request a Demo <span>→</span></a>
       <a href="#tracks" class="btn-secondary">Browse All Tracks</a>
     </div>
-    <p style="font-family:'Exo 2',sans-serif;font-size:0.82rem;font-weight:300;color:rgba(232,244,248,0.3);margin-top:1.5rem;letter-spacing:0.05em;">We'll respond within 24 hours · No commitment required</p>
+    <p class="cta-note">We'll respond within 24 hours · No commitment required</p>
   </div>
 </section>
 
