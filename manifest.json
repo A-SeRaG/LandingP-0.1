@@ -1,0 +1,30 @@
+{
+  "name": "CMind \u2014 Shape the Future Mind",
+  "short_name": "CMind",
+  "description": "Complete STEM curriculum for schools. 10 tracks, 30+ courses, ages 9\u201318.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f9fb",
+  "theme_color": "#0d8fa0",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "education",
+    "productivity"
+  ],
+  "lang": "en",
+  "dir": "ltr"
+}
