@@ -179,6 +179,8 @@ body.light .mobile-nav-link { color: rgba(10,25,41,0.30); }
 body.light .mobile-nav-link:hover { color: var(--cyan); }
 body.light .mobile-nav-divider { background: rgba(13,143,160,0.12); }
 body.light .mobile-nav-cta { background: var(--cyan); color: #ffffff; }
+body.light #mobile-nav-close span { background: var(--cyan); }
+body.light #mobile-nav-close span { background: var(--cyan); }
 
   body.light .hero-title-accent {
   background: linear-gradient(135deg, #0a1929 0%, rgba(10,25,41,0.5) 100%);
@@ -196,7 +198,6 @@ body.light .cta-note {
 body.light .hero-trust-divider {
   background: rgba(13,143,160,0.15);
 }
-
 
 /* ── COMPREHENSIVE LIGHT MODE TEXT FIXES ── */
 body.light .hero-title .accent {
@@ -1631,6 +1632,250 @@ a, button, [role="button"], input, textarea, select, label,
     cursor: auto !important;
   }
 }
+
+/* ── FOOTER ── */
+#main-footer {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--dark2) 0%, var(--dark) 100%);
+  border-top: 1px solid rgba(0,245,255,0.08);
+  padding: 5rem 4rem 0;
+  overflow: hidden;
+}
+#main-footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  opacity: 0.5;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+/* Brand Column */
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.footer-brand-header img {
+  width: 40px; height: 40px;
+  filter: drop-shadow(0 0 8px var(--cyan));
+}
+.footer-brand-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--cyan);
+  text-shadow: 0 0 15px var(--cyan-glow);
+  letter-spacing: 0.05em;
+}
+.footer-tagline {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  opacity: 0.7;
+}
+.footer-desc {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(232,244,248,0.5);
+  line-height: 1.7;
+  max-width: 280px;
+}
+
+/* Social Links */
+.footer-social {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+.social-link {
+  width: 38px; height: 38px;
+  border: 1px solid rgba(0,245,255,0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyan);
+  background: rgba(0,245,255,0.05);
+  transition: all 0.3s ease;
+  cursor: none;
+}
+.social-link svg {
+  width: 18px; height: 18px;
+}
+.social-link:hover {
+  background: rgba(0,245,255,0.15);
+  border-color: var(--cyan);
+  box-shadow: 0 0 15px var(--cyan-glow);
+  transform: translateY(-3px);
+}
+
+/* Navigation Columns */
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.footer-nav-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.footer-nav-list a {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(232,244,248,0.5);
+  text-decoration: none;
+  transition: color 0.3s, padding-left 0.3s;
+  position: relative;
+  display: inline-block;
+}
+.footer-nav-list a::before {
+  content: '';
+  position: absolute;
+  left: -12px; top: 50%;
+  transform: translateY(-50%);
+  width: 0; height: 1px;
+  background: var(--cyan);
+  transition: width 0.3s;
+  box-shadow: 0 0 6px var(--cyan);
+}
+.footer-nav-list a:hover {
+  color: var(--cyan);
+  padding-left: 12px;
+}
+.footer-nav-list a:hover::before {
+  width: 8px;
+}
+
+/* Contact Column */
+.footer-contact-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.footer-contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+.contact-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-top: 2px;
+}
+.contact-label {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  opacity: 0.7;
+  margin-bottom: 0.2rem;
+}
+.footer-contact-list a,
+.footer-contact-list span:last-child {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(232,244,248,0.6);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-contact-list a:hover {
+  color: var(--cyan);
+}
+
+@media (max-width: 1100px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5rem;
+  }
+  .footer-brand-col {
+    grid-column: 1 / -1;
+    text-align: center;
+    align-items: center;
+  }
+  .footer-desc {
+    max-width: 400px;
+  }
+  .footer-contact-col {
+    grid-column: 1 / -1;
+  }
+  }
+}
+
+@media (max-width: 768px) {
+  #main-footer {
+    padding: 3rem 1.5rem 0;
+  }
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .footer-brand-col,
+  .footer-contact-col {
+    grid-column: 1 / -1;
+  }
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  .footer-nav-col {
+    text-align: center;
+  }
+  .footer-nav-list a:hover {
+    padding-left: 0;
+  }
+  .footer-nav-list a::before {
+    display: none;
+  }
+}
+
 </style>
   <!-- Security Headers -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
@@ -1687,7 +1932,6 @@ a, button, [role="button"], input, textarea, select, label,
   </div>
 </noscript>
 
-
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
 <div class="scanline"></div>
@@ -1695,19 +1939,20 @@ a, button, [role="button"], input, textarea, select, label,
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">
+  <a href="#" class="nav-logo" style="text-decoration:none;cursor:none;">
     <img src="/logo.png" alt="CMind Logo" loading="lazy" decoding="async" width="50" height="50">
     <span class="nav-brand">CMind</span>
-  </div>
+  </a>
   <ul class="nav-links">
     <li><a href="#tracks">Tracks</a></li>
     <li><a href="#features">Features</a></li>
     <li><a href="#path">Journey</a></li>
     <li><a href="#founders">Team</a></li>
+    <li><a href="#main-footer">Contact Us</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.75rem;">
     <button id="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">🌙</button>
-    <a href="#" class="nav-cta" data-enroll>Get Started</a>
+    <a href="#cta" class="nav-cta">Get Started</a>
     <button id="nav-hamburger" aria-label="Open navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -1716,10 +1961,15 @@ a, button, [role="button"], input, textarea, select, label,
 
 <!-- MOBILE NAV OVERLAY -->
 <div id="mobile-nav" role="dialog" aria-label="Navigation menu">
+  <button id="mobile-nav-close" aria-label="Close navigation" style="position:absolute;top:1.5rem;right:1.5rem;width:44px;height:44px;background:transparent;border:none;cursor:none;display:flex;align-items:center;justify-content:center;z-index:10;">
+    <span style="display:block;width:24px;height:2px;background:var(--cyan);transform:rotate(45deg);position:absolute;"></span>
+    <span style="display:block;width:24px;height:2px;background:var(--cyan);transform:rotate(-45deg);position:absolute;"></span>
+  </button>
   <a href="#tracks"   class="mobile-nav-link" data-mobile-link>Tracks</a>
   <a href="#features" class="mobile-nav-link" data-mobile-link>Features</a>
   <a href="#path"     class="mobile-nav-link" data-mobile-link>Journey</a>
   <a href="#founders" class="mobile-nav-link" data-mobile-link>Team</a>
+  <a href="#main-footer" class="mobile-nav-link" data-mobile-link>Contact Us</a>
   <div class="mobile-nav-divider"></div>
   <a href="#" class="mobile-nav-cta" data-enroll data-mobile-link>Enroll Your School →</a>
 </div>
@@ -2178,9 +2428,124 @@ a, button, [role="button"], input, textarea, select, label,
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-brand">CMind</div>
-  <div class="footer-copy">© 2026 CMind. Shape the Future Mind.</div>
+<!-- FOOTER -->
+<footer id="main-footer">
+  <div class="footer-container">
+
+    <!-- BRAND COLUMN -->
+    <div class="footer-brand-col">
+      <div class="footer-brand-header">
+        <img src="/logo.png" alt="CMind Logo" width="40" height="40" loading="lazy">
+        <span class="footer-brand-name">CMind</span>
+      </div>
+      <p class="footer-tagline">Shape the Future Mind</p>
+      <p class="footer-desc">Complete STEM curriculum for schools. 10 tracks, 30+ courses, ages 9–18. Building the next generation of innovators.</p>
+
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/cmind-tech" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/cmind.tech" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/cmind.tech" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@cmind-tech" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@cmind.tech" class="social-link" aria-label="TikTok" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- NAVIGATION COLUMNS -->
+    <div class="footer-nav-col">
+      <h4 class="footer-nav-title">Learning Tracks</h4>
+      <ul class="footer-nav-list">
+        <li><a href="#tracks">Programming</a></li>
+        <li><a href="#tracks">Robotics</a></li>
+        <li><a href="#tracks">Artificial Intelligence</a></li>
+        <li><a href="#tracks">Web Development</a></li>
+        <li><a href="#tracks">Mobile Development</a></li>
+        <li><a href="#tracks">Graphic Design</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-nav-col">
+      <h4 class="footer-nav-title">Company</h4>
+      <ul class="footer-nav-list">
+        <li><a href="#founders">About Us</a></li>
+        <li><a href="#founders">Our Team</a></li>
+        <li><a href="#features">Platform Features</a></li>
+        <li><a href="#" data-enroll>Partner Schools</a></li>
+        <li><a href="#" data-enroll>Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-nav-col">
+      <h4 class="footer-nav-title">Resources</h4>
+      <ul class="footer-nav-list">
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Status</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT COLUMN -->
+    <div class="footer-contact-col">
+      <h4 class="footer-nav-title">Contact Us</h4>
+      <ul class="footer-contact-list">
+        <li>
+          <span class="contact-icon">✉️</span>
+          <div>
+            <span class="contact-label">Email</span>
+            <a href="mailto:hello@cmind.tech">hello@cmind.tech</a>
+          </div>
+        </li>
+        <li>
+          <span class="contact-icon">📞</span>
+          <div>
+            <span class="contact-label">Phone</span>
+            <a href="tel:+201234567890">+20 123 456 7890</a>
+          </div>
+        </li>
+        <li>
+          <span class="contact-icon">📍</span>
+          <div>
+            <span class="contact-label">Address</span>
+            <span>Cairo, Egypt</span>
+          </div>
+        </li>
+        <li>
+          <span class="contact-icon">🕐</span>
+          <div>
+            <span class="contact-label">Business Hours</span>
+            <span>Sun–Thu: 9AM – 5PM EET</span>
+          </div>
+        </li>
+      </ul>
+
+      </div>
+
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <p class="footer-copyright">© 2026 CMind. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <span class="legal-divider">|</span>
+        <a href="#">Terms of Service</a>
+        <span class="legal-divider">|</span>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <!-- ENROLLMENT MODAL -->
@@ -2289,7 +2654,6 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
-
 
 // ── CURSOR ──
 const cursor = document.getElementById('cursor');
@@ -2633,7 +2997,6 @@ formSubmit.addEventListener('click', async () => {
   }
 });
 
-
 document.querySelectorAll('.founder-flip').forEach(card => {
   card.addEventListener('click', function(e) {
     // Don't flip when clicking LinkedIn
@@ -2641,7 +3004,6 @@ document.querySelectorAll('.founder-flip').forEach(card => {
     this.classList.toggle('flipped');
   });
 });
-
 
 document.querySelectorAll('.track-card').forEach((card, i) => {
   card.style.transitionDelay = (i % 3) * 0.1 + 's';
@@ -2675,6 +3037,12 @@ hamburger.addEventListener('click', () => {
 document.querySelectorAll('[data-mobile-link]').forEach(link => {
   link.addEventListener('click', () => closeMobileNav());
 });
+
+// Close button handler
+const mobileNavClose = document.getElementById('mobile-nav-close');
+if (mobileNavClose) {
+  mobileNavClose.addEventListener('click', () => closeMobileNav());
+}
 
 // Close on Escape
 document.addEventListener('keydown', e => {
