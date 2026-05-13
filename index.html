@@ -1614,7 +1614,23 @@ body.light .section-header .section-title {
     .hero-logo { animation: none; }
     .scroll-line { animation: none; }
   }
+/* Force cursor: none on ALL interactive elements */
+a, button, [role="button"], input, textarea, select, label, 
+.nav-cta, .btn-primary, .btn-secondary, #theme-toggle, #nav-hamburger,
+.track-card, .feature-card, .path-node, .founder-flip, .modal-close,
+.form-submit, .founder-li, .mobile-nav-cta, .mobile-nav-link {
+  cursor: none !important;
+}
 
+/* Restore system cursor on touch devices (phones/tablets) */
+@media (pointer: coarse) {
+  a, button, [role="button"], input, textarea, select, label, 
+.nav-cta, .btn-primary, .btn-secondary, #theme-toggle, #nav-hamburger,
+.track-card, .feature-card, .path-node, .founder-flip, .modal-close,
+.form-submit, .founder-li, .mobile-nav-cta, .mobile-nav-link{
+    cursor: auto !important;
+  }
+}
 </style>
   <!-- Security Headers -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
