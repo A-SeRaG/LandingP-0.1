@@ -1826,6 +1826,80 @@ a, button, [role="button"], input, textarea, select, label,
   color: rgba(232,244,248,0.6);
 }
 
+/* Footer description text */
+body.light .footer-desc {
+  color: rgba(10, 25, 41, 0.6) !important;
+}
+
+/* Footer navigation links (Programming, Robotics, etc.) */
+body.light .footer-nav-list a {
+  color: rgba(10, 25, 41, 0.55) !important;
+}
+body.light .footer-nav-list a:hover {
+  color: var(--cyan) !important;
+}
+
+/* Footer column headings (LEARNING TRACKS, COMPANY, etc.) */
+body.light .footer-nav-title {
+  color: var(--white) !important; /* #0a1929 in light mode */
+}
+
+/* Contact info values (hello@cmind.tech, +20 123..., Cairo, etc.) */
+body.light .footer-contact-list a,
+body.light .footer-contact-list span:last-child {
+  color: rgba(10, 25, 41, 0.65) !important;
+}
+body.light .footer-contact-list a:hover {
+  color: var(--cyan) !important;
+}
+
+/* Contact icons (📧, 📞, 📍, 🕐) */
+body.light .contact-icon {
+  filter: brightness(0.4);
+}
+
+/* Footer tagline "SHAPE THE FUTURE MIND" */
+body.light .footer-tagline {
+  color: var(--cyan) !important;
+  opacity: 1;
+}
+
+/* Footer brand name */
+body.light .footer-brand-name {
+  color: var(--cyan) !important;
+}
+
+/* Social icons */
+body.light .social-link {
+  border-color: rgba(13, 143, 160, 0.25);
+  background: rgba(13, 143, 160, 0.05);
+  color: var(--cyan);
+}
+body.light .social-link:hover {
+  background: rgba(13, 143, 160, 0.12);
+  border-color: var(--cyan);
+}
+
+/* Footer bottom border & links */
+body.light #main-footer {
+  border-color: rgba(13, 143, 160, 0.1);
+  background: linear-gradient(180deg, var(--dark2) 0%, var(--dark) 100%);
+}
+body.light #main-footer::before {
+  opacity: 0.3;
+}
+body.light .footer-bottom-content {
+  border-color: rgba(13, 143, 160, 0.1);
+}
+body.light .footer-bottom-content a {
+  color: rgba(10, 25, 41, 0.5) !important;
+}
+
+/* Footer nav link hover underline */
+body.light .footer-nav-list a::before {
+  background: var(--cyan);
+}
+
 @media (max-width: 1100px) {
   .footer-container {
     grid-template-columns: 1fr 1fr 1fr;
