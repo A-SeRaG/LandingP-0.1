@@ -1855,7 +1855,7 @@ body.light .footer-contact-list a:hover {
 
 /* Contact icons (📧, 📞, 📍, 🕐) */
 body.light .contact-icon {
-  filter: brightness(0.4);
+  filter: brightness(0.8) drop-shadow(0 0 4px var(--cyan));
 }
 
 /* Footer tagline "SHAPE THE FUTURE MIND" */
