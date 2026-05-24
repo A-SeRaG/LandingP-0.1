@@ -1,0 +1,37 @@
+# CMind LMS
+
+> CMind is a B2B multi-tenant School Learning Management System (LMS) built for educational institutions in the Arab world, with full Arabic RTL and English LTR support.
+
+## What is CMind?
+
+CMind (https://cmind.tech) is a cloud-based LMS platform that enables schools and educational organizations to manage courses, students, teachers, assignments, and performance tracking — all in one place.
+
+## Key Features
+
+- Multi-tenant architecture: each school gets its own isolated workspace
+- Arabic RTL + English LTR full internationalization (i18n)
+- Student points and rewards system
+- Teacher rating system
+- Real-time notifications via Socket.io
+- Course management, assignment tracking, and grading tools
+- Secure authentication with JWT (httpOnly cookies)
+- File uploads via AWS S3
+- Email notifications via Gmail
+- Light and dark mode support
+
+## Who is CMind for?
+
+- K-12 schools and private educational centers
+- Educational technology companies
+- School administrators, teachers, and students
+
+## Technology
+
+CMind is built on a modern stack:
+- Frontend: React 19, TypeScript, Vite, Tailwind CSS, shadcn/ui, Zustand
+- Backend: Node.js, Express, PostgreSQL (Supabase), Socket.io
+
+## Contact & Links
+
+- Website: https://cmind.tech
+- Platform: https://app.cmind.tech (if applicable)
