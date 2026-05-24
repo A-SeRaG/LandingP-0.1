@@ -35,6 +35,131 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:ital,wght@0,200;0,400;0,600;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;7０&family=Exo+2:ital,wght@０,２００；０,４００；０,６００；１,３００&display=swap" rel="stylesheet"></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://cmind.tech/#software",
+      "name": "CMind LMS",
+      "alternateName": "CMind Learning Management System",
+      "url": "https://cmind.tech",
+      "description": "CMind is a B2B multi-tenant School Learning Management System (LMS) for Arabic and international schools. Offering 10 STEM tracks and 30+ courses for ages 9–18, with full Arabic RTL and English LTR support.",
+      "applicationCategory": "EducationalApplication",
+      "applicationSubCategory": "Learning Management System",
+      "operatingSystem": "Web Browser",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "CMind"
+        }
+      },
+      "featureList": [
+        "Multi-tenant school management",
+        "Arabic RTL and English LTR support",
+        "Student points and rewards system",
+        "Teacher rating and review system",
+        "Real-time notifications via WebSocket",
+        "10 STEM learning tracks",
+        "30+ structured courses for ages 9–18",
+        "Secure JWT authentication",
+        "Cloud file storage via AWS S3",
+        "Bilingual internationalization (i18n)"
+      ],
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": ["student", "teacher", "administrator"],
+        "audienceType": "Schools and Educational Institutions"
+      },
+      "inLanguage": ["ar", "en"],
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-05-24",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://cmind.tech/og-image.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "publisher": {
+        "@id": "https://cmind.tech/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://cmind.tech/#organization",
+      "name": "CMind",
+      "url": "https://cmind.tech",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cmind.tech/logo.png",
+        "width": 200,
+        "height": 200
+      },
+      "description": "CMind builds intelligent multi-track learning ecosystems for schools across Egypt and the Arab world.",
+      "foundingDate": "2024",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Cairo, Egypt"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "hello@cmind.tech",
+        "availableLanguage": ["Arabic", "English"]
+      },
+      "areaServed": ["EG", "SA", "AE", "KW", "QA", "BH", "OM", "JO", "LB"],
+      "sameAs": [
+        "https://www.linkedin.com/company/cmind-tech/",
+        "https://www.facebook.com/cmind.academy",
+        "https://www.instagram.com/cmind.tech",
+        "https://www.youtube.com/@cmind-tech",
+        "https://www.tiktok.com/@cmind.tech"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cmind.tech/#website",
+      "name": "CMind",
+      "url": "https://cmind.tech",
+      "description": "Complete STEM curriculum for schools. 10 tracks, 30+ courses, ages 9–18.",
+      "inLanguage": ["ar", "en"],
+      "publisher": {
+        "@id": "https://cmind.tech/#organization"
+      }
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://cmind.tech/#edorg",
+      "name": "CMind Academy",
+      "url": "https://cmind.tech",
+      "description": "CMind Academy provides structured STEM education tracks for K-12 students through partner schools.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "CMind Learning Tracks",
+        "itemListElement": [
+          { "@type": "Course", "name": "Programming Foundation", "description": "Scratch, Scratch + AI, High Level Block-Based programming for beginners." },
+          { "@type": "Course", "name": "Robotics Foundation", "description": "Mechanics, WeDO2 Robotics, and Smart Cities Arduino projects." },
+          { "@type": "Course", "name": "Artificial Intelligence", "description": "Intro to AI, AI Toolkit, and Algorithm & Automation." },
+          { "@type": "Course", "name": "Programming Advanced", "description": "Python Basics, Python OOP, and High Level Python." },
+          { "@type": "Course", "name": "Web Development", "description": "Frontend Design, Backend Systems, and Junior Web Projects." },
+          { "@type": "Course", "name": "Mobile Development", "description": "App basics, Junior Apps, and Senior Projects with MIT App Inventor." },
+          { "@type": "Course", "name": "Graphic Design", "description": "Photo Editing, Motion Graphics, and 3D Design." },
+          { "@type": "Course", "name": "Critical Thinking", "description": "Self-Awareness, Chess Level 1, and Chess Level 2." },
+          { "@type": "Course", "name": "Robotics Advanced", "description": "Statics & Dynamics, Robotics Basics, and Robotics Advanced." },
+          { "@type": "Course", "name": "IoT & Arduino", "description": "Internet of Things projects using Arduino hardware platforms." }
+        ]
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   :root {
     --cyan: #00f5ff;
@@ -2655,60 +2780,6 @@ a, button, [role="button"], input, textarea, select, label,
     </div>
   </div>
 </div>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "CMind LMS",
-      "url": "https://cmind.tech",
-      "description": "CMind is a B2B multi-tenant School Learning Management System designed for Arabic and international educational institutions, supporting full Arabic RTL and English LTR.",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Web",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      },
-      "featureList": [
-        "Multi-tenant school management",
-        "Arabic RTL support",
-        "Student points and rewards system",
-        "Teacher rating system",
-        "Real-time notifications",
-        "Course and assignment management",
-        "Secure JWT authentication",
-        "File uploads via AWS S3"
-      ],
-      "audience": {
-        "@type": "EducationalAudience",
-        "educationalRole": ["student", "teacher", "administrator"]
-      },
-      "inLanguage": ["ar", "en"],
-      "dateModified": "2026-05-24"
-    },
-    {
-      "@type": "Organization",
-      "name": "CMind",
-      "url": "https://cmind.tech",
-      "logo": "https://cmind.tech/logo.png",
-      "sameAs": []
-    },
-    {
-      "@type": "WebSite",
-      "name": "CMind",
-      "url": "https://cmind.tech",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://cmind.tech/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-  ]
-}
-</script>
 
 <script>// Global error handling
 window.addEventListener('error', function(e) {
