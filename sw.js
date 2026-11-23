@@ -1,89 +1,53 @@
-// CMind Service Worker - Production Ready
-const CACHE_NAME = 'cmind-v1';
-const STATIC_ASSETS = [
-  '/',
-  '/cmind-landing-production.html',
-  '/manifest.json',
-  '/mnt/user-data/uploads/logo.png'
-];
+// CMind service worker. Bump CACHE_NAME on every deploy that changes cached files.
+const CACHE_NAME = 'cmind-v2';
+const PRECACHE = ['/', '/css/main.css', '/js/main.js', '/assets/logo.png', '/manifest.json'];
 
-// Install: Cache static assets
 self.addEventListener('install', (event) => {
+  // allSettled: one missing file must never abort the whole install
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(STATIC_ASSETS))
+      .then((cache) => Promise.allSettled(PRECACHE.map((u) => cache.add(u))))
       .then(() => self.skipWaiting())
   );
 });
 
-// Activate: Clean old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames
-          .filter((name) => name !== CACHE_NAME)
-          .map((name) => caches.delete(name))
-      );
-    }).then(() => self.clients.claim())
+    caches.keys()
+      .then((names) => Promise.all(names.filter((n) => n !== CACHE_NAME).map((n) => caches.delete(n))))
+      .then(() => self.clients.claim())
   );
 });
 
-// Fetch: Cache-first strategy for static assets, network-first for API
 self.addEventListener('fetch', (event) => {
   const { request } = event;
-  const url = new URL(request.url);
-
-  // Skip non-GET requests
   if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return; // never touch third-party (Formspree, Google Fonts)
 
-  // Skip cross-origin requests (except fonts)
-  if (url.origin !== self.location.origin && !url.hostname.includes('fonts.googleapis.com') && !url.hostname.includes('fonts.gstatic.com')) {
-    return;
-  }
-
-  // API requests: Network first, cache fallback
-  if (url.pathname.includes('/api/') || url.hostname.includes('formspree.io')) {
+  // Pages: network first so deploys show up immediately; cache is the offline fallback
+  if (request.mode === 'navigate') {
     event.respondWith(
       fetch(request)
-        .then((response) => {
-          if (response.ok) {
-            const clone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-          }
-          return response;
+        .then((res) => {
+          if (res.ok) { const copy = res.clone(); caches.open(CACHE_NAME).then((c) => c.put(request, copy)); }
+          return res;
         })
-        .catch(() => caches.match(request))
+        .catch(() => caches.match(request).then((hit) => hit || caches.match('/')))
     );
     return;
   }
 
-  // Static assets: Cache first, network fallback
+  // Static assets: serve cached copy, refresh it in the background
   event.respondWith(
     caches.match(request).then((cached) => {
-      if (cached) return cached;
-
-      return fetch(request).then((response) => {
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
-        }
-        const clone = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-        return response;
-      });
+      const refresh = fetch(request)
+        .then((res) => {
+          if (res.ok && res.type === 'basic') { const copy = res.clone(); caches.open(CACHE_NAME).then((c) => c.put(request, copy)); }
+          return res;
+        })
+        .catch(() => cached);
+      return cached || refresh;
     })
   );
 });
-
-// Background sync for form submissions (if supported)
-self.addEventListener('sync', (event) => {
-  if (event.tag === 'form-submission') {
-    event.waitUntil(handleFormSubmission());
-  }
-});
-
-async function handleFormSubmission() {
-  // Retry failed form submissions from IndexedDB
-  // Implementation depends on your form handling logic
-  console.log('Background sync triggered for form submission');
-}

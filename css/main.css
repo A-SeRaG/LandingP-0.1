@@ -1643,7 +1643,7 @@ a, button, [role="button"], input, textarea, select, label,
 
 .footer-container {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
   gap: 3rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -1902,7 +1902,7 @@ body.light .footer-nav-list a::before {
 
 @media (max-width: 1100px) {
   .footer-container {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
   }
   .footer-brand-col {
@@ -1952,3 +1952,6 @@ body.light .footer-nav-list a::before {
   }
 }
 
+
+/* Honeypot: off-screen, not display:none (some bots skip display:none fields) */
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }

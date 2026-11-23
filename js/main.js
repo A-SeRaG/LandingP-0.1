@@ -15,6 +15,11 @@ if (window.performance && performance.mark) {
   });
 }
 
+// Async-load Google Fonts stylesheet (replaces inline onload, which a strict CSP blocks)
+document.querySelectorAll('link[data-async-css]').forEach(function(l) {
+  if (l.sheet) { l.media = 'all'; } else { l.addEventListener('load', function() { l.media = 'all'; }); }
+});
+
 // Register Service Worker for offline support
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
@@ -308,6 +313,13 @@ formSubmit.addEventListener('click', async () => {
   const students = document.getElementById('f-students').value.trim();
   const track    = document.getElementById('f-track').value;
   const message  = document.getElementById('f-message').value.trim();
+
+  // Honeypot: real users never see this field. Pretend success for bots, send nothing.
+  if (document.getElementById('f-website').value) {
+    modalForm.style.display = 'none';
+    modalSuccess.classList.add('show');
+    return;
+  }
 
   let hasError = false;
   if (!school)   { showFieldError('f-school');  hasError = true; }

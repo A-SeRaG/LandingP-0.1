@@ -5,22 +5,15 @@ Professional landing page for CMind — a B2B multi-tenant School LMS for Arabic
 ## File Structure
 
 ```
-cmind-landing/
-├── index.html          # Main HTML file (~43KB)
-├── css/
-│   └── main.css        # All styles (~59KB)
-├── js/
-│   └── main.js         # All JavaScript (~15KB)
-├── assets/             # Images, fonts, etc.
-├── logo.ico            # Favicon
-├── logo.png            # Logo image
-├── manifest.json       # PWA manifest
-├── robots.txt          # SEO robots
-├── sitemap.xml         # SEO sitemap
-├── sw.js               # Service Worker
-├── vercel.json         # Vercel deployment config
-├── DEPLOYMENT_GUIDE.md # Deployment instructions
-└── README.md           # This file
+index.html            Landing page
+privacy.html, terms.html, cookies.html   Legal pages (served at /privacy, /terms, /cookies)
+css/main.css, css/legal.css
+js/main.js            Interactions, form (Formspree), theme, service worker registration
+sw.js                 Service worker (bump CACHE_NAME on each deploy)
+assets/               Logo and icons (assets/icons)
+og-image.png          Social share image (1200x630)
+manifest.json, robots.txt, sitemap.xml, llms.txt
+vercel.json           Security headers (CSP, HSTS, ...), clean URLs, cache rules
 ```
 
 ## Features
