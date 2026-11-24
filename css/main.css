@@ -483,39 +483,8 @@ body.light .section-header .section-title {
     color: var(--white);
     font-family: 'Rajdhani', sans-serif;
     overflow-x: hidden;
-    cursor: none;
     transition: background 0.4s, color 0.4s;
   }
-
-  /* ── TOUCH DEVICES: restore system cursor ── */
-  @media (pointer: coarse) {
-    body { cursor: auto; }
-    #cursor, #cursor-ring { display: none; }
-  }
-
-  /* ── CUSTOM CURSOR ── */
-  #cursor {
-    width: 12px; height: 12px;
-    background: var(--cyan);
-    border-radius: 50%;
-    position: fixed; top: 0; left: 0;
-    pointer-events: none; z-index: 9999;
-    transform: translate(-50%,-50%);
-    transition: transform 0.1s, width 0.3s, height 0.3s, background 0.3s;
-    box-shadow: 0 0 15px var(--cyan), 0 0 30px var(--cyan-glow);
-  }
-  #cursor-ring {
-    width: 40px; height: 40px;
-    border: 1px solid var(--cyan);
-    border-radius: 50%;
-    position: fixed; top: 0; left: 0;
-    pointer-events: none; z-index: 9998;
-    transform: translate(-50%,-50%);
-    transition: transform 0.15s ease, width 0.3s, height 0.3s, opacity 0.3s;
-    opacity: 0.5;
-  }
-  body.hovering #cursor { width: 20px; height: 20px; background: transparent; border: 2px solid var(--cyan); }
-  body.hovering #cursor-ring { width: 60px; height: 60px; opacity: 0.8; }
 
   /* ── CANVAS ── */
   #neural-canvas {
@@ -574,7 +543,7 @@ body.light .section-header .section-title {
     color: var(--cyan); background: transparent;
     font-family: 'Orbitron', sans-serif; font-size: 0.75rem; font-weight: 600;
     letter-spacing: 0.15em; text-transform: uppercase;
-    cursor: none; text-decoration: none;
+    cursor: pointer; text-decoration: none;
     transition: background 0.3s, box-shadow 0.3s, color 0.3s;
     clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
   }
@@ -652,7 +621,7 @@ body.light .section-header .section-title {
     color: var(--dark);
     font-family: 'Orbitron', sans-serif; font-size: 0.8rem; font-weight: 700;
     letter-spacing: 0.15em; text-transform: uppercase;
-    border: none; cursor: none; text-decoration: none;
+    border: none; cursor: pointer; text-decoration: none;
     display: inline-flex; align-items: center; gap: 0.8rem;
     clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
     transition: box-shadow 0.3s, transform 0.2s;
@@ -675,7 +644,7 @@ body.light .section-header .section-title {
     color: var(--cyan);
     font-family: 'Orbitron', sans-serif; font-size: 0.8rem; font-weight: 700;
     letter-spacing: 0.15em; text-transform: uppercase;
-    border: 1px solid rgba(0,245,255,0.4); cursor: none; text-decoration: none;
+    border: 1px solid rgba(0,245,255,0.4); cursor: pointer; text-decoration: none;
     display: inline-flex; align-items: center; gap: 0.8rem;
     clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
     transition: border-color 0.3s, background 0.3s, transform 0.2s;
@@ -804,7 +773,6 @@ body.light .section-header .section-title {
     padding: 2.5rem 2rem;
     position: relative;
     overflow: hidden;
-    cursor: none;
     transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     opacity: 0; transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -963,7 +931,6 @@ body.light .section-header .section-title {
     background: var(--dark2);
     clip-path: polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%);
     transition: border-color 0.3s, box-shadow 0.3s, transform 0.4s;
-    cursor: none;
     opacity: 0;
     transition: opacity 0.8s ease, border-color 0.3s, box-shadow 0.3s, transform 0.4s;
   }
@@ -1094,7 +1061,7 @@ body.light .section-header .section-title {
   .founder-flip {
     perspective: 1200px;
     height: 480px;
-    cursor: none;
+    cursor: pointer;
     opacity: 0; transform: translateY(40px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
@@ -1388,7 +1355,7 @@ body.light .section-header .section-title {
     border: 1px solid rgba(0,245,255,0.2);
     color: var(--cyan);
     font-size: 1.1rem; line-height: 1;
-    cursor: none; flex-shrink: 0;
+    cursor: pointer; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
     transition: background 0.3s, box-shadow 0.3s;
     clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
@@ -1443,7 +1410,7 @@ body.light .section-header .section-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.8rem; font-weight: 700;
     letter-spacing: 0.2em; text-transform: uppercase;
-    border: none; cursor: none;
+    border: none; cursor: pointer;
     clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
     transition: box-shadow 0.3s, transform 0.2s;
     display: flex; align-items: center; justify-content: center; gap: 0.8rem;
@@ -1605,24 +1572,6 @@ body.light .section-header .section-title {
     .hero-logo { animation: none; }
     .scroll-line { animation: none; }
   }
-/* Force cursor: none on ALL interactive elements */
-a, button, [role="button"], input, textarea, select, label, 
-.nav-cta, .btn-primary, .btn-secondary, #theme-toggle, #nav-hamburger,
-.track-card, .feature-card, .path-node, .founder-flip, .modal-close,
-.form-submit, .founder-li, .mobile-nav-cta, .mobile-nav-link {
-  cursor: none !important;
-}
-
-/* Restore system cursor on touch devices (phones/tablets) */
-@media (pointer: coarse) {
-  a, button, [role="button"], input, textarea, select, label, 
-.nav-cta, .btn-primary, .btn-secondary, #theme-toggle, #nav-hamburger,
-.track-card, .feature-card, .path-node, .founder-flip, .modal-close,
-.form-submit, .founder-li, .mobile-nav-cta, .mobile-nav-link{
-    cursor: auto !important;
-  }
-}
-
 /* ── FOOTER ── */
 #main-footer {
   position: relative;
@@ -1707,7 +1656,7 @@ a, button, [role="button"], input, textarea, select, label,
   color: var(--cyan);
   background: rgba(0,245,255,0.05);
   transition: all 0.3s ease;
-  cursor: none;
+  cursor: pointer;
 }
 .social-link svg {
   width: 18px; height: 18px;

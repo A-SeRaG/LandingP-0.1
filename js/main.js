@@ -31,31 +31,6 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-// ── CURSOR ──
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursor-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
-
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx + 'px';
-  cursor.style.top = my + 'px';
-});
-
-function animRing() {
-  rx += (mx - rx) * 0.1;
-  ry += (my - ry) * 0.1;
-  ring.style.left = rx + 'px';
-  ring.style.top = ry + 'px';
-  requestAnimationFrame(animRing);
-}
-animRing();
-
-document.querySelectorAll('a, button, .track-card, .feature-card, .path-node, .nav-cta').forEach(el => {
-  el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-  el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
-});
-
 // ── MAGNETIC HOVER ──
 document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta, .track-card').forEach(el => {
   el.addEventListener('mousemove', function(e) {

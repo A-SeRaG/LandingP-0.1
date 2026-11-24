@@ -19,7 +19,7 @@ vercel.json           Security headers (CSP, HSTS, ...), clean URLs, cache rules
 ## Features
 
 - **Neural Canvas Background** — Animated particle network
-- **Custom Cursor** — Glow cursor with magnetic hover effects
+- **Magnetic Hover** — Buttons and track cards follow the pointer slightly
 - **Dark/Light Theme** — Toggle with localStorage persistence
 - **Scroll Animations** — IntersectionObserver-based reveals
 - **3D Card Tilts** — Perspective transforms on hover

@@ -1,5 +1,5 @@
 // CMind service worker. Bump CACHE_NAME on every deploy that changes cached files.
-const CACHE_NAME = 'cmind-v2';
+const CACHE_NAME = 'cmind-v3';
 const PRECACHE = ['/', '/css/main.css', '/js/main.js', '/assets/logo.png', '/manifest.json'];
 
 self.addEventListener('install', (event) => {
